@@ -1,10 +1,10 @@
 import * as React from 'react';
 import './todo-results.scss';
-
+import { TodosContext } from '../../todo-context';
 export const TodoResults = () => {
-  const calculateChecked = () => {
-    // Fix an ability to calculate completed tasks
-  };
+
+  const { todos } = React.useContext(TodosContext);
+  const calculateChecked = () => todos.filter((el) => el.checked).length;
 
   return (
     <div className="todo-results">
